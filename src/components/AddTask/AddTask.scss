@@ -1,0 +1,15 @@
+.TaskList__add {
+  width: 100%;
+
+  button {
+    width: 100%;
+    padding: 2px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

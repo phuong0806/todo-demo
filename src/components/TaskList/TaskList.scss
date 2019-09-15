@@ -1,0 +1,22 @@
+.TaskList {
+  font-size: 1.6rem;
+  width: 33.33333%;
+  background-color: rgb(240, 240, 240);
+  height: 95vh;
+  border-radius: 1rem;  
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &:not(:last-child) {
+    margin-right: 5rem;
+  }
+
+  &__label {
+    display: block;
+    font-weight: 400;
+    width: 100%;
+    margin-bottom: .5rem;
+  }
+}
