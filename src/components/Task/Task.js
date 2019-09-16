@@ -13,6 +13,12 @@ class Task extends React.Component {
     this.setState({
       dueTime: calculateTime(this.props.task.date)
     });
+
+    setInterval(() => {
+      this.setState({
+        dueTime: calculateTime(this.props.task.date)
+      });
+    }, 10000);
   }
 
   toggleEditingTask = () => {
@@ -22,12 +28,6 @@ class Task extends React.Component {
   }
 
   renderTask = (task) => {
-    setInterval(() => {
-      this.setState({
-        dueTime: calculateTime(task.date)
-      });
-    }, 10000);
-
     return (
       <div className="Task">
         <button className="Task__close" onClick={this.toggleEditingTask}>
@@ -37,7 +37,7 @@ class Task extends React.Component {
         <label className="Task__title">{task.title}</label>
         <div className="Task__time">
           {task.date === '' ? '' : <div><small><i className="fa fa-clock-o"></i>{' '}{displayFormatDatetime(task.date)}</small></div>}
-          {this.state.dueTime && <div className={'Task__duetime ' + this.state.dueTime.value}><small>{this.state.dueTime.label}</small></div>}
+          {this.props.task.status !== 2 && this.state.dueTime && <div className={'Task__duetime ' + this.state.dueTime.value}><small>{this.state.dueTime.label}</small></div>}
         </div>
       </div>
     );

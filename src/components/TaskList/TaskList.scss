@@ -10,7 +10,16 @@
   justify-content: space-between;
 
   &:not(:last-child) {
-    margin-right: 5rem;
+    margin-right: 2.5rem;
+  }
+
+  &__info {
+    height: 100%;
+  }
+
+  &__items {
+    height: 95%;
+    overflow-y: auto;
   }
 
   &__label {
