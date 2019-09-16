@@ -10,7 +10,6 @@ class Task extends React.Component {
   }
 
   componentDidMount() {
-    console.log('run');
     this.setState({
       dueTime: calculateTime(this.props.task.date)
     });
@@ -27,7 +26,7 @@ class Task extends React.Component {
       this.setState({
         dueTime: calculateTime(task.date)
       });
-    }, 30000);
+    }, 10000);
 
     return (
       <div className="Task">

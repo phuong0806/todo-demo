@@ -22,23 +22,23 @@ export const calculateTime = (datetime) => {
   const seconds = (timeSetup - currentTime) / 1000;
   const min = seconds / 60;
   const hours = seconds / 3600;
-
-  if (hours <= 24 && hours > 0) {
-    if (hours === 0) {
-      return {
-        value: 'warning',
-        label: `GẦN ĐẾN HẠN - ${Math.floor(hours)} giờ nữa`
-      }
-    } else {
+  
+  if (hours <= 24 && hours >= 0) {
+    if (hours < 1) {
       return {
         value: 'warning',
         label: `GẦN ĐẾN HẠN - ${Math.floor(min)} phút nữa`
       }
+    } else {
+        return {
+          value: 'warning',
+          label: `GẦN ĐẾN HẠN - ${Math.floor(hours)} giờ nữa`
+        }
     }
-  } else {
+  } else if (hours < 0) {
     return {
       value: 'danger',
       label: 'ĐÃ QUÁ HẠN' 
     }
-  }
+  } 
 }
